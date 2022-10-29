@@ -24,30 +24,47 @@ totalBelanja = 0
 jumlahBelanja = 0
 while ('y' in tambahBarang) :
 
-#nama barang
-namaBarang = input("masukkan nama barang: ")
+    #nama barang
+    namaBarang = input("masukkan nama barang: ")
 
-#harga barang
-hargaBarang = int(input("masukkan harga barang: "))
+    #harga barang
+    hargaBarang = int(input("masukkan harga barang: "))
 
-#jumlah barang
-jumlahBarang = int(input("masukkan jumlah barang: "))
+    #jumlah barang
+    jumlahBarang = int(input("masukkan jumlah barang: "))
 
-#tampilkan barang
-print(f"""
-{namaBarang}
-PCS   {jumlahBarang} {hargaBarang:,} {hargaBarang * jumlahBarang:,}
-""")
+    #tampilkan barang
+    print(f"""
+    {namaBarang}
+    PCS   {jumlahBarang} {hargaBarang:,} {hargaBarang * jumlahBarang:,}
+    """)
 
-#kalkulasi total belanja dan jumlah belanja
-totalBelanja += (hargaBarang * jumlahBarang)
-jumlahBelanja += jumlahBarang
+    #kalkulasi total belanja dan jumlah belanja
+    totalBelanja += (hargaBarang * jumlahBarang)
+    jumlahBelanja += jumlahBarang
 
-#tambah barang atau tidak
-tambahBarang = input("tambah barang lagi?(y/n: ")
+    #tambah barang atau tidak
+    tambahBarang = input("tambah barang lagi?(y/n: ")
 
-#tampilan total dan quality
-print(f"""
-{jumlahBelanja} item
-totBelanja
-""")
+    #tampilan total dan quality
+    print(f"""
+    {jumlahBelanja} item
+    totBelanja   : Rp.   {totalBelanja:,}
+    =====================================
+    """)
+
+    #pembayaran
+    pembayaran = int(input("masukkan pembayaran: "))
+    print(f"pembayaran   :  Rp.   {pembayaran:,}")
+    kembalian = pembayaran - totalBelanja
+    print("------------------------------")
+    print(f"kembalian   :  Rp.    {kembalian:,}")
+
+    #tampilan akhir
+    print("""
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+               THANK YOU 
+            FOR SHOPPING AT 
+            OUR SUPERMARKET
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+             """)
